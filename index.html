@@ -305,8 +305,8 @@ body{
 <!-- Top text -->
 <div class="top-section">
   <h1><span class="red">MY</span>&nbsp; LOVE!</h1>
-  <h2>I LOVE YOU &hearts; &hearts;</h2>
-  <p>If there was ever a moment where I made your heart feel something real even once then please... just open this. I didn't write this to win you back. I wrote this because my heart won't let me leave without saying everything.</p>
+  <h2>I LOVE YOU &hearts;</h2>
+  <p>If there was ever a moment where I made your heart feel something real even then please... just open this. I didn't write this to win you back. I wrote this because my heart won't let me leave without saying everything.</p>
 </div>
 
 <!-- Floating Envelope -->
@@ -383,10 +383,10 @@ body{
 <div class="env-shadow"></div>
 <p class="hint">with love FOREVER HK &hearts;</p>
 
-<!-- Music player - visible but styled -->
-<div id="ytPlayer" style="position:fixed;bottom:-300px;left:-300px;width:1px;height:1px;overflow:hidden;pointer-events:none;z-index:-1">
-  <iframe id="musicFrame" width="1" height="1" src="" allow="autoplay; encrypted-media" allowfullscreen frameborder="0"></iframe>
-</div>
+<!-- Music player -->
+<audio id="bgMusic" loop preload="auto">
+  <source src="song.mp3" type="audio/mpeg">
+</audio>
 
 <!-- Music control button -->
 <button id="musicBtn" class="music-btn" onclick="toggleMusic()" style="display:none">
@@ -487,21 +487,25 @@ body{
 </div>
 
 <script>
-let musicStarted = false;
 let musicPlaying = false;
+const music = document.getElementById('bgMusic');
 const musicBtn = document.getElementById('musicBtn');
 const musicIcon = document.getElementById('musicIcon');
 
 function openLetter(){
   document.getElementById('overlay').classList.add('show');
-  if(!musicStarted){
-    musicStarted = true;
-    const frame = document.getElementById('musicFrame');
-    frame.src = 'https://www.youtube.com/embed/1Vsmp5zvkVQ?autoplay=1&loop=1&playlist=1Vsmp5zvkVQ&controls=0&showinfo=0&rel=0&enablejsapi=1';
-    musicPlaying = true;
-    musicBtn.style.display = 'flex';
-    musicIcon.textContent = '♫';
-    musicBtn.classList.remove('paused');
+  if(!musicPlaying){
+    music.play().then(()=>{
+      musicPlaying = true;
+      musicBtn.style.display = 'flex';
+      musicIcon.textContent = '♫';
+      musicBtn.classList.remove('paused');
+    }).catch(()=>{
+      // Autoplay blocked — show button anyway so they can tap
+      musicBtn.style.display = 'flex';
+      musicIcon.textContent = '♪';
+      musicBtn.classList.add('paused');
+    });
   }
 }
 
@@ -510,14 +514,13 @@ function closeLetter(){
 }
 
 function toggleMusic(){
-  const frame = document.getElementById('musicFrame');
   if(musicPlaying){
-    frame.contentWindow.postMessage('{"event":"command","func":"pauseVideo","args":""}', '*');
+    music.pause();
     musicPlaying = false;
     musicIcon.textContent = '♪';
     musicBtn.classList.add('paused');
   } else {
-    frame.contentWindow.postMessage('{"event":"command","func":"playVideo","args":""}', '*');
+    music.play();
     musicPlaying = true;
     musicIcon.textContent = '♫';
     musicBtn.classList.remove('paused');
