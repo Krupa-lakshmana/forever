@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>BE MINE</title>
+<title>For You</title>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&display=swap');
 *{margin:0;padding:0;box-sizing:border-box}
@@ -16,29 +16,21 @@ body{
   overflow:hidden;
   position:relative;
 }
-
-/* ===== LARGE BACKGROUND TEXT ===== */
 .bg-text{
   position:fixed;
   font-family:'Playfair Display',serif;
   font-weight:700;font-style:italic;
   color:rgba(160,50,40,.08);
   font-size:clamp(200px,40vw,500px);
-  line-height:.85;
-  z-index:0;pointer-events:none;
-  user-select:none;
-  text-align:center;
+  line-height:.85;z-index:0;pointer-events:none;
+  user-select:none;text-align:center;
   top:50%;left:50%;transform:translate(-50%,-50%);
   white-space:nowrap;
 }
 .bg-text span{display:block}
-
-/* ===== TOP TEXT ===== */
 .top-section{
-  position:relative;z-index:2;
-  text-align:center;
-  margin-bottom:30px;
-  opacity:0;
+  position:relative;z-index:2;text-align:center;
+  margin-bottom:30px;opacity:0;
   animation:fadeDown .8s ease .3s forwards;
 }
 @keyframes fadeDown{
@@ -49,29 +41,17 @@ body{
   font-family:'Playfair Display',serif;
   font-size:clamp(1rem,2.5vw,1.3rem);
   font-weight:700;letter-spacing:8px;
-  text-transform:uppercase;color:#3a1c1c;
-  margin-bottom:2px;
+  text-transform:uppercase;color:#3a1c1c;margin-bottom:2px;
 }
 .top-section h1 .red{color:#c0392b}
 .top-section h2{
   font-family:'Playfair Display',serif;
   font-size:clamp(.7rem,1.5vw,.85rem);
   font-weight:400;letter-spacing:6px;
-  text-transform:uppercase;color:#6a4a4a;
-  margin-bottom:18px;
+  text-transform:uppercase;color:#6a4a4a;margin-bottom:18px;
 }
-.top-section p{
-  font-family:'Cormorant Garamond',serif;
-  font-size:clamp(.85rem,1.8vw,1rem);
-  color:#5a3a3a;line-height:1.7;
-  max-width:420px;margin:0 auto;
-}
-.top-section p b{font-weight:600;color:#3a1c1c}
-
-/* ===== ENVELOPE ===== */
 .envelope-scene{
-  position:relative;z-index:2;
-  cursor:pointer;
+  position:relative;z-index:2;cursor:pointer;
   filter:drop-shadow(0 25px 50px rgba(80,15,10,.35));
   transform:rotate(-4deg);
   animation:envFloat 3.5s ease-in-out infinite;
@@ -80,49 +60,34 @@ body{
   0%,100%{transform:translateY(0) rotate(-4deg)}
   50%{transform:translateY(-15px) rotate(1deg)}
 }
-.envelope-scene:hover{
-  filter:drop-shadow(0 30px 60px rgba(80,15,10,.45));
-}
-
-/* Shadow on ground that reacts to float */
+.envelope-scene:hover{filter:drop-shadow(0 30px 60px rgba(80,15,10,.45))}
 .env-shadow{
   width:clamp(200px,35vw,280px);height:18px;
   background:radial-gradient(ellipse,rgba(0,0,0,.1),transparent 70%);
-  border-radius:50%;margin:0 auto;
-  position:relative;z-index:1;
+  border-radius:50%;margin:0 auto;position:relative;z-index:1;
   animation:shadowPulse 3.5s ease-in-out infinite;
 }
 @keyframes shadowPulse{
   0%,100%{transform:scaleX(1);opacity:.7}
   50%{transform:scaleX(.8);opacity:.4}
 }
-
 .envelope-svg{width:clamp(280px,50vw,380px);height:auto}
-
-/* ===== CLICK HINT ===== */
 .hint{
-  position:relative;z-index:2;
-  margin-top:20px;
+  position:relative;z-index:2;margin-top:20px;
   font-family:'Cormorant Garamond',serif;
-  font-size:.9rem;color:#8a6a5a;
-  opacity:0;
+  font-size:.9rem;color:#8a6a5a;opacity:0;
   animation:fadeDown .6s ease 1.5s forwards, pulse 2.5s ease-in-out 2s infinite;
 }
 @keyframes pulse{0%,100%{opacity:.4}50%{opacity:.9}}
-
-/* ===== STRING / THREAD ===== */
 .thread{
   position:fixed;z-index:1;pointer-events:none;
   opacity:0;animation:fadeDown .8s ease 1s forwards;
 }
-
-/* ===== MUSIC BUTTON ===== */
 .music-btn{
   position:fixed;bottom:20px;left:20px;z-index:150;
   width:44px;height:44px;border-radius:50%;
   background:linear-gradient(135deg,#c0392b,#e74c3c);
-  border:none;color:#fff;font-size:1.2rem;
-  cursor:pointer;
+  border:none;color:#fff;font-size:1.2rem;cursor:pointer;
   box-shadow:0 4px 15px rgba(192,57,43,.35);
   animation:musicPulse 2s ease-in-out infinite;
   display:flex;align-items:center;justify-content:center;
@@ -136,31 +101,19 @@ body{
   background:#8a6a5a;animation:none;
   box-shadow:0 4px 15px rgba(0,0,0,.15);
 }
-
-/* ===== LETTER OVERLAY ===== */
 .overlay{
   position:fixed;inset:0;z-index:100;
-  background:rgba(40,12,8,.45);
-  backdrop-filter:blur(16px);
+  background:rgba(40,12,8,.45);backdrop-filter:blur(16px);
   display:none;align-items:center;justify-content:center;
-  padding:20px;
-  opacity:0;transition:opacity .5s;
+  padding:20px;opacity:0;transition:opacity .5s;
 }
 .overlay.show{display:flex;opacity:1}
-
-/* Handwritten letter on old paper */
 .letter{
-  max-width:620px;width:95%;
-  border-radius:4px;
-  padding:0;
+  max-width:620px;width:95%;border-radius:4px;padding:0;
   box-shadow:0 25px 80px rgba(0,0,0,.25);
   transform:scale(.85) rotate(2deg);
   transition:transform .6s cubic-bezier(.34,1.56,.64,1),opacity .5s;
-  opacity:0;
-  position:relative;
-  overflow:hidden;
-  max-height:90vh;
-  /* Old paper texture */
+  opacity:0;position:relative;overflow:hidden;max-height:90vh;
   background:
     radial-gradient(ellipse at 20% 80%,rgba(210,180,140,.3),transparent 60%),
     radial-gradient(ellipse at 80% 20%,rgba(220,190,150,.25),transparent 50%),
@@ -169,23 +122,16 @@ body{
   border:2px solid #e0cdb5;
 }
 .overlay.show .letter{transform:scale(1) rotate(0deg);opacity:1}
-
-/* Torn/aged edges */
 .letter::before{
   content:'';position:absolute;inset:0;
   box-shadow:inset 0 0 60px rgba(160,120,70,.15);
   pointer-events:none;border-radius:4px;
 }
-
-/* Tape at top */
 .letter-tape{
   width:80px;height:28px;margin:-2px auto 0;position:relative;z-index:2;
-  background:rgba(230,210,170,.6);
-  border:1px solid rgba(200,170,120,.3);
-  border-radius:2px;
-  transform:rotate(-2deg);
+  background:rgba(230,210,170,.6);border:1px solid rgba(200,170,120,.3);
+  border-radius:2px;transform:rotate(-2deg);
   box-shadow:0 1px 3px rgba(0,0,0,.06);
-  /* Speckle pattern */
   background-image:
     radial-gradient(circle 1.5px at 15px 8px,#c0392b .8px,transparent .8px),
     radial-gradient(circle 1.5px at 35px 15px,#e74c3c .8px,transparent .8px),
@@ -195,10 +141,8 @@ body{
     radial-gradient(circle 1px at 10px 16px,#d4956a .6px,transparent .6px);
   background-color:rgba(230,210,170,.55);
 }
-
 .letter-content{
-  padding:30px 35px 40px;
-  overflow-y:auto;
+  padding:30px 35px 40px;overflow-y:auto;
   max-height:calc(90vh - 30px);
 }
 .letter .close{
@@ -207,19 +151,15 @@ body{
   cursor:pointer;transition:color .3s;z-index:3;
 }
 .letter .close:hover{color:#c0392b}
-
-/* Responsive fixes */
+.doodle{position:absolute;pointer-events:none;z-index:1}
 @media(max-width:600px){
   .bg-text{font-size:150px}
   .top-section{margin-bottom:20px;padding:0 15px}
   .top-section h1{font-size:.9rem;letter-spacing:5px}
   .top-section h2{font-size:.65rem;letter-spacing:4px}
-  .top-section p{font-size:.85rem}
   .envelope-svg{width:260px}
   .env-shadow{width:180px}
   .letter-content{padding:22px 22px 35px}
-  .heading{font-size:1.4rem!important}
-  .letter-line{font-size:.95rem!important}
   .letter-tape{width:65px;height:22px}
   .hint{font-size:.8rem}
   .music-btn{width:38px;height:38px;font-size:1rem;bottom:15px;left:15px}
@@ -228,73 +168,14 @@ body{
   .bg-text{font-size:110px}
   .envelope-svg{width:230px}
   .letter-content{padding:18px 16px 30px}
-  .heading{font-size:1.2rem!important}
-  .letter-line{font-size:.88rem!important}
   .top-section h1{font-size:.8rem}
 }
-
-/* Scattered doodles */
-.doodle{position:absolute;pointer-events:none;z-index:1}
-
-/* Handwritten style heading */
-.letter .heading{
-  font-family:'Playfair Display',serif;
-  font-size:1.7rem;font-weight:600;
-  color:#3a1c1c;margin-bottom:4px;
-  position:relative;display:inline-block;
-}
-.letter .heading em{color:#c0392b;font-style:italic}
-.letter .heading .doodle-hearts{
-  position:absolute;top:-5px;right:-30px;font-size:.85rem;
-}
-
-.letter .subhead{
-  font-family:'Cormorant Garamond',serif;
-  font-size:1.1rem;color:#6a5040;font-style:italic;
-  margin-bottom:22px;
-}
-
-/* Letter lines with highlights */
-.letter-line{
-  font-family:'Cormorant Garamond',serif;
-  font-size:1.08rem;line-height:1.9;
-  color:#4a3528;margin-bottom:8px;
-  position:relative;
-}
-.letter-line .highlight{
-  background:linear-gradient(180deg,transparent 55%,rgba(255,180,190,.35) 55%);
-  padding:0 3px;
-}
-.letter-line .heart-inline{color:#c0392b;font-size:.85rem}
-.letter-line .star-inline{color:#d4956a;font-size:.7rem}
-
-/* Sign off */
-.letter .sign-section{
-  margin-top:25px;text-align:center;
-}
-.letter .sign-text{
-  font-family:'Playfair Display',serif;
-  font-style:italic;font-weight:600;
-  color:#3a1c1c;font-size:1.2rem;
-}
-.letter .sign-name{
-  font-family:'Playfair Display',serif;
-  font-weight:600;color:#c0392b;
-  font-size:1.1rem;margin-top:4px;
-}
-.letter .sign-name .heart-sign{font-size:.9rem}
 </style>
 </head>
 <body>
 
-<!-- Background large text -->
-<div class="bg-text">
-  <span>Be</span>
-  <span>my</span>
-  <span>Val.</span>
-</div>
+<div class="bg-text"><span>Be</span><span>my</span><span>Val.</span></div>
 
-<!-- Decorative thread SVG -->
 <svg class="thread" style="top:35%;left:-5%;width:115%;height:60%" viewBox="0 0 1200 400" fill="none" xmlns="http://www.w3.org/2000/svg">
   <path d="M-50 350 Q200 100 400 300 Q600 500 800 200 Q1000 -50 1250 250" stroke="#b5523a" stroke-width="1.8" fill="none" opacity=".2"/>
 </svg>
@@ -302,227 +183,115 @@ body{
   <path d="M-30 50 Q300 350 600 100 Q900 -100 1230 200" stroke="#b5523a" stroke-width="1.2" fill="none" opacity=".12"/>
 </svg>
 
-<!-- Top text -->
 <div class="top-section">
-  <h1><span class="red">MY</span>&nbsp; LOVE!</h1>
-  <h2>I LOVE YOU &hearts;</h2>
-  <p>If there was ever a moment where I made your heart feel something real even then please... just open this. I didn't write this to win you back. I wrote this because my heart won't let me leave without saying everything.</p>
+  <h1><span class="red">LOST</span>&nbsp; ACCESS</h1>
+  <h2>WITH ALL THE COURAGE I CHOOSE TO LET YOU GO</h2>
 </div>
 
-<!-- Floating Envelope -->
 <div class="envelope-scene" id="envBtn" onclick="openLetter()">
   <svg class="envelope-svg" viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
-    <!-- Shadow -->
     <ellipse cx="200" cy="290" rx="160" ry="10" fill="rgba(0,0,0,.08)"/>
-    
-    <!-- Envelope body -->
     <rect x="40" y="80" width="320" height="200" rx="12" fill="url(#envBody)"/>
-    
-    <!-- Bottom fold lines -->
     <polygon points="40,280 200,190 360,280" fill="url(#envBottom)" opacity=".9"/>
-    
-    <!-- Letter paper sticking out -->
-    <g id="letterPeek">
-      <rect x="75" y="50" width="250" height="180" rx="4" fill="#fff" 
-            stroke="#e8ddd5" stroke-width="1"/>
-      <!-- Letter content preview -->
-      <text x="100" y="95" font-family="'Playfair Display',serif" font-size="18" font-weight="600" fill="#3a1c1c">Dear</text>
-      <text x="140" y="95" font-family="'Playfair Display',serif" font-size="18" font-weight="600" fill="#c0392b" font-style="italic"> Love,</text>
-      <text x="100" y="125" font-family="'Playfair Display',serif" font-size="14" fill="#5a3a3a">I hope this finds you well...</text>
-      <line x1="100" y1="148" x2="275" y2="148" stroke="#e0d5cc" stroke-width=".8"/>
-      <line x1="100" y1="165" x2="260" y2="165" stroke="#e0d5cc" stroke-width=".8"/>
-      <line x1="100" y1="182" x2="240" y2="182" stroke="#e0d5cc" stroke-width=".8"/>
-      <line x1="100" y1="199" x2="200" y2="199" stroke="#e0d5cc" stroke-width=".8"/>
-      <text x="100" y="148" font-family="'Cormorant Garamond',serif" font-size="9.5" fill="#8a7a6a">...there's something I've been meaning to</text>
-      <text x="100" y="165" font-family="'Cormorant Garamond',serif" font-size="9.5" fill="#8a7a6a">tell you. I don't know where to start but</text>
-      <text x="100" y="182" font-family="'Cormorant Garamond',serif" font-size="9.5" fill="#8a7a6a">here it goes...</text>
-      <text x="200" y="218" font-family="'Playfair Display',serif" font-size="8" fill="#c0392b" font-style="italic" text-anchor="middle">Let's see where it goes</text>
+    <g>
+      <rect x="75" y="50" width="250" height="180" rx="4" fill="#fff" stroke="#e8ddd5" stroke-width="1"/>
+      <text x="200" y="110" font-family="'Playfair Display',serif" font-size="14" font-weight="600" fill="#c0392b" text-anchor="middle" font-style="italic">Lost access</text>
+      <line x1="140" y1="125" x2="260" y2="125" stroke="#e0d5cc" stroke-width=".8"/>
     </g>
-    
-    <!-- Top flap -->
     <polygon points="40,80 200,195 360,80" fill="url(#envFlap)"/>
-    
-    <!-- Flap shadow line -->
     <line x1="40" y1="80" x2="200" y2="195" stroke="rgba(0,0,0,.06)" stroke-width="1"/>
     <line x1="360" y1="80" x2="200" y2="195" stroke="rgba(0,0,0,.06)" stroke-width="1"/>
-    
-    <!-- Wax seal -->
     <circle cx="200" cy="218" r="22" fill="url(#waxGrad)"/>
     <circle cx="200" cy="218" r="18" fill="none" stroke="rgba(255,255,255,.08)" stroke-width="1"/>
     <circle cx="200" cy="218" r="14" fill="none" stroke="rgba(255,255,255,.05)" stroke-width=".5"/>
-    <!-- Seal heart -->
     <path d="M200 212 Q200 208 196 208 Q192 208 192 212 Q192 216 200 222 Q208 216 208 212 Q208 208 204 208 Q200 208 200 212Z" fill="rgba(255,255,255,.35)"/>
-    
-    <!-- String across -->
     <path d="M20 200 Q100 170 200 218 Q300 265 380 235" stroke="#a04530" stroke-width="1.5" fill="none" opacity=".5"/>
     <path d="M380 235 Q390 232 395 240" stroke="#a04530" stroke-width="1.2" fill="none" opacity=".4"/>
-    
-    <!-- Gradients -->
     <defs>
       <linearGradient id="envBody" x1="0" y1="0" x2=".8" y2="1">
-        <stop offset="0%" stop-color="#d94535"/>
-        <stop offset="50%" stop-color="#c0392b"/>
-        <stop offset="100%" stop-color="#a22a1f"/>
+        <stop offset="0%" stop-color="#d94535"/><stop offset="50%" stop-color="#c0392b"/><stop offset="100%" stop-color="#a22a1f"/>
       </linearGradient>
       <linearGradient id="envFlap" x1=".5" y1="0" x2=".5" y2="1">
-        <stop offset="0%" stop-color="#e04838"/>
-        <stop offset="100%" stop-color="#c43028"/>
+        <stop offset="0%" stop-color="#e04838"/><stop offset="100%" stop-color="#c43028"/>
       </linearGradient>
       <linearGradient id="envBottom" x1=".5" y1="0" x2=".5" y2="1">
-        <stop offset="0%" stop-color="#b52a20"/>
-        <stop offset="100%" stop-color="#a82218"/>
+        <stop offset="0%" stop-color="#b52a20"/><stop offset="100%" stop-color="#a82218"/>
       </linearGradient>
       <radialGradient id="waxGrad" cx=".4" cy=".35">
-        <stop offset="0%" stop-color="#d4432e"/>
-        <stop offset="100%" stop-color="#6e1510"/>
+        <stop offset="0%" stop-color="#d4432e"/><stop offset="100%" stop-color="#6e1510"/>
       </radialGradient>
     </defs>
   </svg>
 </div>
 
 <div class="env-shadow"></div>
-<p class="hint">with love FOREVER HK &hearts;</p>
+<p class="hint">with love FOREVER HK &#9829;</p>
 
-<!-- Music player -->
 <audio id="bgMusic" loop preload="auto">
   <source src="song.mp3" type="audio/mpeg">
 </audio>
-
-<!-- Music control button -->
 <button id="musicBtn" class="music-btn" onclick="toggleMusic()" style="display:none">
   <span id="musicIcon">&#9835;</span>
 </button>
 
-<!-- ===== LETTER OVERLAY ===== -->
 <div class="overlay" id="overlay" onclick="if(event.target===this)closeLetter()">
   <div class="letter">
     <button class="close" onclick="closeLetter()">&times;</button>
-
-    <!-- Tape at top -->
     <div class="letter-tape"></div>
 
-    <!-- Scattered doodle hearts (CSS positioned) -->
-    <svg class="doodle" style="top:8px;right:50px;width:40px" viewBox="0 0 40 20"><text x="0" y="14" font-size="12" fill="#c0392b" opacity=".6">♥♥</text></svg>
-    <svg class="doodle" style="top:60px;right:25px;width:20px" viewBox="0 0 20 20"><text x="0" y="14" font-size="10" fill="#e8a0a0" opacity=".5">✦</text></svg>
-    <svg class="doodle" style="bottom:120px;left:20px;width:25px" viewBox="0 0 25 25"><text x="0" y="18" font-size="14" fill="#c0392b" opacity=".35">♥</text></svg>
-    <svg class="doodle" style="bottom:80px;right:30px;width:20px" viewBox="0 0 20 20"><text x="0" y="14" font-size="11" fill="#d4956a" opacity=".45">✦</text></svg>
-    <svg class="doodle" style="top:130px;left:15px;width:18px" viewBox="0 0 18 18"><text x="0" y="13" font-size="10" fill="#e8a0a0" opacity=".5">♡</text></svg>
-    <svg class="doodle" style="top:200px;right:18px;width:25px" viewBox="0 0 25 25"><text x="0" y="18" font-size="13" fill="#c0392b" opacity=".3">♥</text></svg>
-    <svg class="doodle" style="bottom:180px;left:30px;width:18px" viewBox="0 0 18 18"><text x="0" y="14" font-size="10" fill="#d4956a" opacity=".5">★</text></svg>
-    <svg class="doodle" style="top:280px;left:12px;width:15px" viewBox="0 0 15 15"><text x="0" y="12" font-size="9" fill="#e8a0a0" opacity=".45">♥</text></svg>
+    <svg class="doodle" style="top:8px;right:50px;width:40px" viewBox="0 0 40 20"><text x="0" y="14" font-size="12" fill="#c0392b" opacity=".6">&#9829;&#9829;</text></svg>
+    <svg class="doodle" style="top:60px;right:25px;width:20px" viewBox="0 0 20 20"><text x="0" y="14" font-size="10" fill="#e8a0a0" opacity=".5">&#10022;</text></svg>
+    <svg class="doodle" style="bottom:120px;left:20px;width:25px" viewBox="0 0 25 25"><text x="0" y="18" font-size="14" fill="#c0392b" opacity=".35">&#9829;</text></svg>
+    <svg class="doodle" style="bottom:80px;right:30px;width:20px" viewBox="0 0 20 20"><text x="0" y="14" font-size="11" fill="#d4956a" opacity=".45">&#10022;</text></svg>
 
-    <div class="letter-content">
-      
-      <div class="heading">Hiii nan preethi huduga...... <span class="doodle-hearts">♥ ♥</span></div>
-      <div class="subhead"></div>
-
-      <div class="letter-line">
-        <span class="star-inline">✦</span> Its been so long but I still feel you around me, I still sense every touch of yours and your voice every time, it will forever be with me. Thanks for all the love you showed me, ever since i have met you I can't take my mind off you. It true that you never expressed anything by action but i always felt what you wanted to say. It might sound funny and fake to you but I always wanted to treat you like a baby, bcz ik how it feels in this huge cruel word outside, at least you can be yourself when you have someone who won't judge you. The first time you held my hand in the car I knew it was <span class="highlight">something i wanted</span>, then from ever since that I felt every moment went magical with you. I never thought twice whenever i was around you and that's where i felt <span class="highlight">it's him or never</span>. <span class="heart-inline">♥</span>
+    <div class="letter-content" style="display:flex;align-items:center;justify-content:center;min-height:350px;flex-direction:column">
+      <div style="text-align:center">
+        <div style="font-size:1rem;color:#c0392b;margin-bottom:25px">&#9829;</div>
+        <div style="font-family:'Playfair Display',serif;font-size:clamp(1.3rem,3.5vw,1.8rem);font-weight:700;color:#3a1c1c;letter-spacing:3px;text-transform:uppercase;line-height:1.6;margin-bottom:20px">
+          FOR THE FINAL ACT OF LOVE
+        </div>
+        <div style="width:50px;height:1.5px;background:#d4a0a0;margin:0 auto 20px"></div>
+        <div style="font-family:'Playfair Display',serif;font-size:clamp(1rem,2.5vw,1.3rem);font-weight:400;color:#5a3a3a;letter-spacing:2px;text-transform:uppercase;line-height:1.8;font-style:italic">
+          WITH ALL THE COURAGE<br>I CHOOSE TO LET YOU GO
+        </div>
+        <div style="font-size:.85rem;color:#c0392b;margin-top:25px">&#9829;</div>
       </div>
-
-      <div class="letter-line" style="margin-top:14px">
-        <span class="star-inline">✦</span> Yes I have made mistakes that made us stand here today, but i never wanted or would stand against you i was with you even when I did not have anyone else and i want to be there for you <span class="highlight">ALWAYS!</span> So, who else would understand me? (You?). Later then i realized Love is not about expecting it in return, it's just about being there for a person. I never told you how i wanted to be because i always felt good automatically with you and that was enough. <span class="heart-inline">♥♥</span>
-      </div>
-
-      <div class="letter-line" style="margin-top:14px">
-        <span class="star-inline">✦</span> I know you are the best person by heart, stay the same, never let the child in you disappear or never let go the spark in you. <span class="highlight">You will be successful</span> in what you want and i will be happy hearing that even from far. <span class="heart-inline">☺</span>
-      </div>
-
-      <div class="letter-line" style="margin-top:14px">
-        Even if it's true that you are with other girls i do not want to believe it, i will never believe it. <span class="highlight">I have seen you cry and i trust that those tears were never fake.</span> <span class="heart-inline">♥</span>
-      </div>
-
-      <div class="letter-line" style="margin-top:14px">
-        <span class="star-inline">✦</span> So this is the end according to you, end to the dream farmhouse with pets, birds, fishes all surrounded by greens, end to explore the world together, end to living together after settling, end to spend as we always dreamed, end of deciding the eyes, nose, lips and eyebrows(like yours) of our child, end to the love of cooking food for each other, and <span class="highlight">THE END to the 'I would never be bored of fucking you!'</span>. <span class="heart-inline">♥</span>
-      </div>
-
-      <div class="letter-line" style="margin-top:14px">
-        I will never be able to forget you i don't want to forget too. <span class="highlight">I STILL LOVE YOU the same</span> and i will always love you the same, even when you are not mine, I will love you the same and that's not changing forever for me. <span class="heart-inline">♥♥</span>
-      </div>
-
-      <div class="letter-line" style="margin-top:14px">
-        <span class="star-inline">✦</span> I begged god for you to stay, I hate to admit it you destroyed me in ways i never believed a human could fractured me where i was already fragile, but still I prayed, I prayed for your footsteps to turn back, for your heart to soften, for your mind to change its course and choose me I pleaded not for what you did to me but for who you once were <span class="highlight">WHEN YOU HELD ME GENTLY</span> perhaps that is the cruelest truth of love, that even after the wound is dealt we still hope it might also be one to heal us. <span class="highlight">I BEGGED GOD FOR YOU TO STAY BECAUSE MY HEART DID NOT KNOW HOW TO SURVIVE YOUR ABSENCE.</span> <span class="heart-inline">♥</span>
-      </div>
-
-      <div class="letter-line" style="margin-top:14px">
-        <span class="star-inline">✦</span> I am always waiting for you here. Let me tell you how in the sky crowded with stars <span class="highlight">you remain the only moon i see</span>, how among billions of faces in this world it is only your eyes i ever search for. Let me also tell you how you are the fire i would reach for without fear of being burned the warmth i would choose you even knowing the cost. <span class="heart-inline">♥♥</span>
-      </div>
-
-      <div class="letter-line" style="margin-top:14px">
-        <span class="highlight">I promise to love you the same until it takes my last breath.</span> <span class="heart-inline">♥</span>
-      </div>
-
-      <div class="letter-line" style="margin-top:20px;text-align:center;font-weight:600;color:#c0392b;font-family:'Playfair Display',serif;font-size:1.15rem">
-        I MISS YOU EVERY SECOND HERE ! <span class="heart-inline">♥</span>
-      </div>
-
-      <div class="letter-line" style="margin-top:10px;text-align:center;font-weight:600;color:#c0392b;font-family:'Playfair Display',serif;font-size:1.1rem">
-        I LOOVEEEEE YYOUUUUUUUUU JAAAAAAAAASTHHHIIIIIIIIIIIIIII HARSHIIIIIIIIIIIIIIIIIIII <span class="heart-inline">♥♥♥</span>
-      </div>
-
-      <div class="letter-line" style="margin-top:6px;text-align:center;font-weight:600;color:#3a1c1c;font-family:'Playfair Display',serif;font-size:1.05rem">
-        I AM AFRAID TO LOOSE YOU, PLEASE DON'T LEAVE ME BABYYYY <span class="heart-inline">♥</span>
-      </div>
-
-      <div class="letter-line" style="margin-top:22px;text-align:center">
-        <span class="star-inline">✦</span> <span class="highlight">I LOVE YOU WITH A ONE-SIDE LOVE.</span> <span class="star-inline">✦</span>
-      </div>
-      <div class="letter-line" style="text-align:center">
-        I DON'T WANT TO KNOW WHAT LIES IN YOUR HEART.
-      </div>
-      <div class="letter-line" style="text-align:center">
-        I DON'T WANT TO KNOW WHO LIVES IN YOUR HEART.
-      </div>
-      <div class="letter-line" style="text-align:center">
-        WHATEVER YOUR DECISIONS IS........
-      </div>
-
-      <div class="sign-section">
-        <div class="sign-text">YOURS FOREVER</div>
-        <div class="sign-name">MARGIII! <span class="heart-sign">♥</span></div>
-      </div>
-
     </div>
   </div>
 </div>
 
 <script>
-let musicPlaying = false;
-const music = document.getElementById('bgMusic');
-const musicBtn = document.getElementById('musicBtn');
-const musicIcon = document.getElementById('musicIcon');
+let musicPlaying=false;
+const music=document.getElementById('bgMusic');
+const musicBtn=document.getElementById('musicBtn');
+const musicIcon=document.getElementById('musicIcon');
 
 function openLetter(){
   document.getElementById('overlay').classList.add('show');
   if(!musicPlaying){
-    music.play().then(()=>{
-      musicPlaying = true;
-      musicBtn.style.display = 'flex';
-      musicIcon.textContent = '♫';
+    music.play().then(function(){
+      musicPlaying=true;
+      musicBtn.style.display='flex';
+      musicIcon.textContent='\u266B';
       musicBtn.classList.remove('paused');
-    }).catch(()=>{
-      // Autoplay blocked — show button anyway so they can tap
-      musicBtn.style.display = 'flex';
-      musicIcon.textContent = '♪';
+    }).catch(function(){
+      musicBtn.style.display='flex';
+      musicIcon.textContent='\u266A';
       musicBtn.classList.add('paused');
     });
   }
 }
-
 function closeLetter(){
   document.getElementById('overlay').classList.remove('show');
 }
-
 function toggleMusic(){
   if(musicPlaying){
-    music.pause();
-    musicPlaying = false;
-    musicIcon.textContent = '♪';
+    music.pause();musicPlaying=false;
+    musicIcon.textContent='\u266A';
     musicBtn.classList.add('paused');
-  } else {
-    music.play();
-    musicPlaying = true;
-    musicIcon.textContent = '♫';
+  }else{
+    music.play();musicPlaying=true;
+    musicIcon.textContent='\u266B';
     musicBtn.classList.remove('paused');
   }
 }
